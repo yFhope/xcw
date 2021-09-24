@@ -9,5 +9,5 @@ add_params = {}
 for name, jid, url in zip(names[1:30], ids[1:30], urls[1:30]):
     add_params['j_name'] = name.value  # 景点名称
     add_params['j_id'] = jid.value  # 景点ID
-    j_url = url.value  # 景点url
+    j_url = jid.value # 景点url
     print(j_url,add_params)
