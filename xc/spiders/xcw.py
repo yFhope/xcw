@@ -26,6 +26,7 @@ class XcwSpider(scrapy.Spider):
     source_api = "https://m.ctrip.com/restapi/soa2/13444/json/getPoiCommentInfoWithHotTag"
 
     # url = 'https://gs.ctrip.com/html5/you/sight/huangshanscenicarea19/{}.html'
+    num = 0
 
     def start_requests(self):
         workbook = load_workbook(filename=r'C:\Users\windows\Desktop\xcw\45A.xlsx')
@@ -33,11 +34,13 @@ class XcwSpider(scrapy.Spider):
         names = sheet['C']  # 景点名称
         ids = sheet['G']  # 景点ID
         urls = sheet['F']  # 景点url
-        for name, jid, url in zip(names[1:5], ids[1:5], urls[1:5]):
+        for name, jid, url in zip(names[1:], ids[1:], urls[1:]):
             add_params = {}
             add_params['J_name'] = name.value  # 景点名称
             add_params['J_id'] = jid.value  # 景点ID
             j_url = url.value  # 景点url
+            self.num += 1
+            print(f'请求数：》》》》{self.num}')
             yield scrapy.Request(url=j_url, callback=self.parse_index_data, cb_kwargs=add_params)
 
     def parse_index_data(self, response, J_name, J_id):
@@ -50,8 +53,7 @@ class XcwSpider(scrapy.Spider):
 
         self.source_params['arg']['resourceId'] = J_id
         yield scrapy.Request(self.source_api, callback=self.get_comm_api, method='POST',
-                             body=json.dumps(self.source_params), headers={'Content-Type': 'application/json'},
-                             cb_kwargs=j_kargs)
+                             body=json.dumps(self.source_params), cb_kwargs=j_kargs)
 
     def get_comm_api(self, response, J_name, J_id, level, overallScore, label):
         json_data = json.loads(response.text)
@@ -65,3 +67,15 @@ class XcwSpider(scrapy.Spider):
         print("评论数 ", totalCount)
         print(js, qw, xjb)
         print("===" * 45)
+
+        item = {}
+        item['J_id'] = J_id
+        item['J_name'] = J_name
+        item['level'] = level
+        item['overallScore'] = overallScore
+        item['label'] = label
+        item['totalCount'] = totalCount
+        item['js'] = js
+        item['qw'] = qw
+        item['xjb'] = xjb
+        yield item

@@ -2,7 +2,10 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import base64
+import random
 
+import requests
 from scrapy import signals
 
 # useful for handling different item types with a single interface
@@ -101,3 +104,38 @@ class XcDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class RandomProxy(object):
+    def get_proxies(self):
+        """
+        代理
+        :return:代理地址>dict
+        """
+        try:
+            proxies_url = 'http://node2-calcsvr.realsvr.cs-xc-idc2-area1.singhand.com:9099/domestic/apply'
+            proxies_response = requests.post(url=proxies_url, timeout=(5, 5))
+        except:
+            print('{"msg":"代理调度失败","status_code":500}')
+            return self.get_proxies()
+        ip = proxies_response.json()['data']['ip']
+        port = proxies_response.json()['data']['port']
+        ip_port = str(ip) + ':' + str(port)
+        proxies = {'http': ip_port, 'https': ip_port}
+        print(f'agent used：{ip_port}')
+        return proxies
+
+    def process_request(self, request, spider):
+        request.meta['proxy'] = "http://" + self.get_proxies()['http']
+
+        # proxy = random.choice(PROXIES)
+
+        # if proxy['user_passwd'] is None:
+        # 没有代理账户验证的代理使用方式
+        # request.meta['proxy'] = "http://" + proxy['ip_port']
+        # else:
+        #     # 对账户密码进行base64编码转换
+        #     base64_userpasswd = base64.b64encode(proxy['user_passwd'])
+        #     # 对应到代理服务器的信令格式里
+        #     request.headers['Proxy-Authorization'] = 'Basic ' + base64_userpasswd
+        #     request.meta['proxy'] = "http://" + proxy['ip_port']

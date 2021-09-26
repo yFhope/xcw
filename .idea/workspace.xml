@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a662c278-e4d3-45fc-a48b-7ded0eef952c" name="Default Changelist" comment="xiao xi chuan di">
+    <list default="true" id="a662c278-e4d3-45fc-a48b-7ded0eef952c" name="Default Changelist" comment="数据提取完成，待编写数据库程序">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xc/4A5A汇总.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/45A.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xc/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/items.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xc/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/middlewares.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xc/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/pipelines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xc/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xc/spiders/xcw.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/spiders/xcw.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +49,7 @@
       <recent name="C:\Users\y\Desktop\xc\xc" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.xcw">
+  <component name="RunManager" selected="Python.test">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="xc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,8 +96,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.xcw" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.xcw" />
       </list>
     </recent_temporary>
   </component>
@@ -108,7 +111,7 @@
       <updated>1632407701223</updated>
       <workItem from="1632407703619" duration="760000" />
       <workItem from="1632410270412" duration="4015000" />
-      <workItem from="1632447709493" duration="5900000" />
+      <workItem from="1632447709493" duration="18017000" />
     </task>
     <task id="LOCAL-00001" summary="xiao xi chuan di">
       <created>1632447127775</created>
@@ -117,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632447127775</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="数据提取完成，待编写数据库程序">
+      <created>1632473509599</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1632473509599</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +147,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="xiao xi chuan di" />
-    <option name="LAST_COMMIT_MESSAGE" value="xiao xi chuan di" />
+    <MESSAGE value="数据提取完成，待编写数据库程序" />
+    <option name="LAST_COMMIT_MESSAGE" value="数据提取完成，待编写数据库程序" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -151,7 +162,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/xcw$test.coverage" NAME="test Coverage Results" MODIFIED="1632449735748" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xcw$test.coverage" NAME="test Coverage Results" MODIFIED="1632624604098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xc$test.coverage" NAME="test Coverage Results" MODIFIED="1632414200547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xcw$xcw.coverage" NAME="xcw Coverage Results" MODIFIED="1632450102084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xc/spiders" />
   </component>
