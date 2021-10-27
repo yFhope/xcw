@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+from loguru import logger
 
 BOT_NAME = 'xc'
 
@@ -18,8 +19,11 @@ NEWSPIDER_MODULE = 'xc.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
-LOG_LEVEL = 'WARN'
-LOG_FILE = './log.log'
+LOG_LEVEL = 'INFO'
+LOG_FILE = './slog.log'
+
+logger.add('./my_log.log', rotation='00:00', format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {module} | {message}",
+           encoding='utf-8')
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 CONCURRENT_REQUESTS = 32
@@ -27,9 +31,9 @@ CONCURRENT_REQUESTS = 32
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-# DOWNLOAD_DELAY = 3
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-# CONCURRENT_REQUESTS_PER_DOMAIN = 16
+CONCURRENT_REQUESTS_PER_DOMAIN = 23
 # CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
@@ -42,7 +46,7 @@ CONCURRENT_REQUESTS = 32
 DEFAULT_REQUEST_HEADERS = {
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en',
-    'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.63 Safari/537.36',
+    'user-agent': 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4577.82 Mobile Safari/537.36 Edg/93.0.961.52',
 }
 
 # Enable or disable spider middlewares
@@ -55,7 +59,8 @@ DEFAULT_REQUEST_HEADERS = {
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
     # 'xc.middlewares.XcDownloaderMiddleware': 543,
-    'xc.middlewares.RandomProxy': 100
+    # 'xc.middlewares.RandomProxy': 100
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 550,
 }
 
 # Enable or disable extensions
@@ -90,3 +95,9 @@ ITEM_PIPELINES = {
 # HTTPCACHE_DIR = 'httpcache'
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# Retry settings
+RETRY_ENABLED = True
+RETRY_TIMES = 8  # 想重试几次就写几
+# 下面这行可要可不要
+# RETRY_HTTP_CODES = [500, 502, 503, 504, 408]

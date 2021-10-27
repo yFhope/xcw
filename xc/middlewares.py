@@ -3,7 +3,9 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import base64
+import logging
 import random
+import time
 
 import requests
 from scrapy import signals
@@ -113,20 +115,24 @@ class RandomProxy(object):
         :return:代理地址>dict
         """
         try:
-            proxies_url = 'http://node2-calcsvr.realsvr.cs-xc-idc2-area1.singhand.com:9099/domestic/apply'
+            proxies_url = 'http://node2-calcsvr.realsvr.cs-xc-idc2-area1.singhand.com:9099/domestic/applyZM'
             proxies_response = requests.post(url=proxies_url, timeout=(5, 5))
-        except:
-            print('{"msg":"代理调度失败","status_code":500}')
+            if proxies_response.status_code == 200:
+                ip = proxies_response.json()['data']['ip']
+                port = proxies_response.json()['data']['port']
+                ip_port = str(ip) + ':' + str(port)
+                logging.info(f'agent used：{ip_port}')
+                proxies = {'http': ip_port, 'https': ip_port}
+                return proxies
+            raise Exception('proxy error~')
+        except Exception as e:
+            logging.error(f'代理调度失败,10s后重试，原因:{e}')
+            time.sleep(10)
             return self.get_proxies()
-        ip = proxies_response.json()['data']['ip']
-        port = proxies_response.json()['data']['port']
-        ip_port = str(ip) + ':' + str(port)
-        proxies = {'http': ip_port, 'https': ip_port}
-        print(f'agent used：{ip_port}')
-        return proxies
 
     def process_request(self, request, spider):
         request.meta['proxy'] = "http://" + self.get_proxies()['http']
+        # request.meta['proxy'] = "http://" + "117.34.192.57:4230"
 
         # proxy = random.choice(PROXIES)
 

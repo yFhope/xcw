@@ -17,3 +17,15 @@ class XcItem(scrapy.Item):
     js = scrapy.Field()
     qw = scrapy.Field()
     xjb = scrapy.Field()
+
+
+class tdyItem(scrapy.Item):
+    # define the fields for your item here like:
+    openTime = scrapy.Field()
+    address = scrapy.Field()
+    noticeAppointment = scrapy.Field()
+
+
+class zbItem(scrapy.Item):
+    # define the fields for your item here like:
+    trafficDesc = scrapy.Field()

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a662c278-e4d3-45fc-a48b-7ded0eef952c" name="Default Changelist" comment="数据提取完成，待编写数据库程序">
+    <list default="true" id="a662c278-e4d3-45fc-a48b-7ded0eef952c" name="Default Changelist" comment="完成程序&#10;小bug 请求数 2033  数据库少了20个">
+      <change afterPath="$PROJECT_DIR$/4A5A港澳台.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/xc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/xc.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/45A.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xc/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xc/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/xc/middlewares.py" afterDir="false" />
@@ -25,6 +30,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1yXpHRXwcAIchAYZpdk73xrGn5d" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,10 +49,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/xc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\桌面\客户单1：携程\景点信息\xcw" />
+      <recent name="C:\Users\windows\Desktop\xcw" />
       <recent name="C:\Users\windows\Desktop\xcw\xc" />
       <recent name="C:\Users\y\Desktop\xc\xc\spiders" />
     </key>
@@ -49,7 +64,51 @@
       <recent name="C:\Users\y\Desktop\xc\xc" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.main">
+    <configuration name="james(2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="xc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/james(2).py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="xc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="xc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -96,6 +155,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.james(2)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.xcw" />
       </list>
@@ -111,7 +172,20 @@
       <updated>1632407701223</updated>
       <workItem from="1632407703619" duration="760000" />
       <workItem from="1632410270412" duration="4015000" />
-      <workItem from="1632447709493" duration="18017000" />
+      <workItem from="1632447709493" duration="27088000" />
+      <workItem from="1632896863255" duration="2243000" />
+      <workItem from="1632982916162" duration="2080000" />
+      <workItem from="1633699221480" duration="7511000" />
+      <workItem from="1633779599763" duration="34000" />
+      <workItem from="1634008322398" duration="3360000" />
+      <workItem from="1634024894681" duration="4529000" />
+      <workItem from="1634039833459" duration="3972000" />
+      <workItem from="1634293090023" duration="14962000" />
+      <workItem from="1634648606969" duration="3293000" />
+      <workItem from="1634736884410" duration="3056000" />
+      <workItem from="1634781113281" duration="4000" />
+      <workItem from="1635337694995" duration="1853000" />
+      <workItem from="1635339643505" duration="1619000" />
     </task>
     <task id="LOCAL-00001" summary="xiao xi chuan di">
       <created>1632447127775</created>
@@ -127,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632473509599</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成程序&#10;小bug 请求数 2033  数据库少了20个">
+      <created>1632638994527</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1632638994527</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,22 +229,30 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="xiao xi chuan di" />
     <MESSAGE value="数据提取完成，待编写数据库程序" />
-    <option name="LAST_COMMIT_MESSAGE" value="数据提取完成，待编写数据库程序" />
+    <MESSAGE value="完成程序&#10;小bug 请求数 2033  数据库少了20个" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成程序&#10;小bug 请求数 2033  数据库少了20个" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test.py</url>
-          <line>7</line>
+          <line>9</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/xc/spiders/xcw.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/xcw$test.coverage" NAME="test Coverage Results" MODIFIED="1632624604098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xcw$james_2_.coverage" NAME="james(2) Coverage Results" MODIFIED="1634743315833" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xcw$test.coverage" NAME="test Coverage Results" MODIFIED="1634557103443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xc$test.coverage" NAME="test Coverage Results" MODIFIED="1632414200547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/xcw$main.coverage" NAME="main Coverage Results" MODIFIED="1635338896184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/xcw$xcw.coverage" NAME="xcw Coverage Results" MODIFIED="1632450102084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xc/spiders" />
   </component>
 </project>
